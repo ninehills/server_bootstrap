@@ -26,7 +26,7 @@ resource "vultr_instance" "dev" {
   os_id                  = 1743 # Ubuntu 22.04
   hostname               = "vultr-dev"
   enable_ipv6            = true
-  backups                = false
+  backups                = "disabled"
   ssh_key_ids            = [vultr_ssh_key.vultr-dev-ssh-key.id]
   user_data              = "${file("user-data.sh")}"
 }
