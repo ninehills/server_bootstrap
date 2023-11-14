@@ -20,8 +20,8 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install -y docker-ce docker-ce-cli c
 
 
 ### Onedrive
-wget -qO - https://download.opensuse.org/repositories/home:/npreining:/debian-ubuntu-onedrive/Debian_11/Release.key | gpg --dearmor | sudo tee /usr/share/keyrings/obs-onedrive.gpg > /dev/null
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/obs-onedrive.gpg] https://download.opensuse.org/repositories/home:/npreining:/debian-ubuntu-onedrive/Debian_11/ ./" | sudo tee /etc/apt/sources.list.d/onedrive.list
+wget -qO - https://download.opensuse.org/repositories/home:/npreining:/debian-ubuntu-onedrive/xUbuntu_22.04/Release.key | gpg --dearmor | sudo tee /usr/share/keyrings/obs-onedrive.gpg > /dev/null
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/obs-onedrive.gpg] https://download.opensuse.org/repositories/home:/npreining:/debian-ubuntu-onedrive/xUbuntu_22.04/ ./" | sudo tee /etc/apt/sources.list.d/onedrive.list
 sudo apt-get update
 sudo DEBIAN_FRONTEND=noninteractive apt install -y --no-install-recommends --no-install-suggests onedrive
 
@@ -30,9 +30,3 @@ curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/jammy.noarmor.gpg | sudo tee
 curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/jammy.tailscale-keyring.list | sudo tee /etc/apt/sources.list.d/tailscale.list
 sudo apt-get update
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y tailscale
-
-### Upgrade
-sudo DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
-
-### Reboot
-sudo reboot
